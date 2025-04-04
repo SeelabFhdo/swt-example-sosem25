@@ -14,6 +14,9 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         jdk: [22]
+        project:
+          - proj1
+          - proj2
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
@@ -24,5 +27,6 @@ jobs:
           java-version: ${{ matrix.jdk }}
           distribution: 'zulu'
           cache: maven
-      - name: Build with Maven
+      - name: Build with Maven of ${{ matrix.project }}
+        working-directory: ${{ matrix.project }}
         run: mvn --batch-mode --update-snapshots verify
