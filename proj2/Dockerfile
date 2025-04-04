@@ -8,3 +8,6 @@ COPY src ./src
 
 # Run Maven to build the project
 RUN mvn clean package -DskipTests
+
+# Run the application
+CMD ["java", "-jar", "target/proj1-1.0-SNAPSHOT.jar"]
