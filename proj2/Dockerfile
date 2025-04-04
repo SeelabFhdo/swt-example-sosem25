@@ -10,4 +10,4 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Run the application
-CMD ["java", "-jar", "target/proj1-1.0-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/proj1-1.0-SNAPSHOT-shaded.jar"]
