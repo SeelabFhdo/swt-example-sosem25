@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        jdk: [22]
+        jdk: [24]
         project:
           - proj1
           - proj2
@@ -25,7 +25,7 @@ jobs:
         uses: actions/setup-java@v4.5.0
         with:
           java-version: ${{ matrix.jdk }}
-          distribution: 'zulu'
+          distribution: 'temurin'
           cache: maven
       - name: Build with Maven of ${{ matrix.project }}
         working-directory: ${{ matrix.project }}
